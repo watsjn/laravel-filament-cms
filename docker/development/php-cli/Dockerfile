@@ -1,0 +1,13 @@
+FROM php:8.3-cli-alpine3.19
+
+RUN docker-php-ext-install pcntl
+
+RUN mv $PHP_INI_DIR/php.ini-development $PHP_INI_DIR/php.ini
+
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/bin --filename=composer --version=2.7.7 --quiet
+
+RUN addgroup -g 1000 app && adduser -u 1000 -G app -s /bin/sh -D app
+
+WORKDIR /app
+
+USER app
