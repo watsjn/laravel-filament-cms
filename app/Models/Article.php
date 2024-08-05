@@ -9,8 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Article extends Model
 {
-    use HasFactory;
-    use HasUuids;
+    use HasFactory, HasUuids;
 
     public function user(): BelongsTo
     {

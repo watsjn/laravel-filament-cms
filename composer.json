@@ -40,10 +40,11 @@
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
         ],
-        "app-init": [
+        "app-dev-init": [
             "@php -r \"file_exists('.env') || copy('.env.dev.example', '.env');\"",
             "@php artisan key:generate --ansi",
-            "@php artisan migrate --graceful --ansi"
+            "@php artisan migrate --graceful --ansi",
+            "@php artisan db:seed --ansi"
         ]
     },
     "extra": {

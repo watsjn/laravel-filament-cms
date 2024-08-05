@@ -20,7 +20,7 @@ docker-up:
 	docker compose up -d
 
 app-init:
-	docker compose run --rm php-cli composer app-init
+	docker compose run --rm php-cli composer app-dev-init
 
 #fixtures:
 #	docker compose run --rm php-cli composer app fixtures:load
